@@ -9,7 +9,7 @@ using BlogEngine.Controllers;
 
 namespace BlogEngine.Tests.Controllers
 {
-    [TestClass]
+   /* [TestClass]
     public class HomeControllerTest
     {
         [TestMethod]
@@ -50,5 +50,5 @@ namespace BlogEngine.Tests.Controllers
             // Assert
             Assert.IsNotNull(result);
         }
-    }
+    }*/
 }

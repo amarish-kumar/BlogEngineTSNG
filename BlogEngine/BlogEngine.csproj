@@ -202,10 +202,22 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\DateTimeJavaScript.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\BlogPost.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Site.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\BlogPostsService.cs" />
+    <Compile Include="Services\IBlogPostsService.cs" />
+    <Compile Include="Services\IRolesService.cs" />
+    <Compile Include="Services\ISiteService.cs" />
+    <Compile Include="Services\IUsersService.cs" />
+    <Compile Include="Services\RolesService.cs" />
+    <Compile Include="Services\SiteService.cs" />
+    <Compile Include="Services\UsersService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -243,9 +255,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -267,8 +276,20 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
+    <Content Include="Views\Home\Admin.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="app\blocks\" />
+    <Folder Include="app\blogposts\" />
+    <Folder Include="app\dashboard\" />
+    <Folder Include="app\layout\" />
+    <Folder Include="app\services\" />
+    <Folder Include="app\sitesettings\" />
+    <Folder Include="app\usersettings\" />
+    <Folder Include="app\users\" />
+    <Folder Include="app\widgets\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
