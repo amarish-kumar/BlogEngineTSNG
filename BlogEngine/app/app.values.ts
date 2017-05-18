@@ -1,11 +1,13 @@
 ﻿interface ICurrentUser {
-    userId:string;
+    userId: string;
+    fullName:string;
 }
 ((): void => {
     'use strict';
 
     var currentUser: ICurrentUser = {
-        userId: ''
+        userId: '',
+        fullName:''
     };
 
     angular

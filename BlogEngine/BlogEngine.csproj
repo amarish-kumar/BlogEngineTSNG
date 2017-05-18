@@ -230,6 +230,12 @@
     <Content Include="app\app.values.js" />
     <Content Include="app\blocks\logdecorator.config.js" />
     <Content Include="app\blogposts\blogposts.routes.js" />
+    <Content Include="app\layout\layout.module.js" />
+    <Content Include="app\layout\navigation.controller.js" />
+    <Content Include="app\services\services.module.js" />
+    <Content Include="app\services\user.service.js" />
+    <Content Include="app\sitesettings\sitesettings.controller.js" />
+    <Content Include="app\sitesettings\sitesettings.module.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -261,6 +267,12 @@
     <Content Include="app\app.run.js.map" />
     <Content Include="app\app.values.js.map" />
     <Content Include="app\blocks\logdecorator.config.js.map" />
+    <Content Include="app\layout\layout.module.js.map" />
+    <Content Include="app\layout\navigation.controller.js.map" />
+    <Content Include="app\services\services.module.js.map" />
+    <Content Include="app\services\user.service.js.map" />
+    <Content Include="app\sitesettings\sitesettings.controller.js.map" />
+    <Content Include="app\sitesettings\sitesettings.module.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -314,9 +326,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\dashboard\" />
-    <Folder Include="app\layout\" />
-    <Folder Include="app\services\" />
-    <Folder Include="app\sitesettings\" />
     <Folder Include="app\usersettings\" />
     <Folder Include="app\users\" />
     <Folder Include="app\widgets\" />
@@ -341,6 +350,12 @@
     <TypeScriptCompile Include="app\app.values.ts" />
     <TypeScriptCompile Include="app\blocks\logdecorator.config.ts" />
     <TypeScriptCompile Include="app\blogposts\blogposts.routes.ts" />
+    <TypeScriptCompile Include="app\layout\layout.module.ts" />
+    <TypeScriptCompile Include="app\layout\navigation.controller.ts" />
+    <TypeScriptCompile Include="app\services\services.module.ts" />
+    <TypeScriptCompile Include="app\services\user.service.ts" />
+    <TypeScriptCompile Include="app\sitesettings\sitesettings.controller.ts" />
+    <TypeScriptCompile Include="app\sitesettings\sitesettings.module.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-component-router.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />

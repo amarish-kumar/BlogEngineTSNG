@@ -1,7 +1,8 @@
 (function () {
     'use strict';
     var currentUser = {
-        userId: ''
+        userId: '',
+        fullName: ''
     };
     angular
         .module('app')
