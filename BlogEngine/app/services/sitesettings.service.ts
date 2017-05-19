@@ -1,24 +1,53 @@
 ﻿module app.services {
-    import IApiEndPointConfig = app.blocks.IApiEndPointConfig;
     'use strict';
 
+    export interface ISiteSettings {
+        title: string;
+        description: string;
+        themeName: string;
+        availableThemeNames: string[];
+    }
+
     export interface ISiteSettingsService {
-        
+        getSettings(): ng.IPromise<ISiteSettings>;
+        getThemes(): ng.IPromise<string[]>;
+        updateSettings(siteSettings: ISiteSettings): void;
     }
 
-    class SiteSettingsService implements  ISiteSettingsService {
-        constructor(private $http: ng.IHttpService, private apiEndPoint:IApiEndPointConfig) {}
+    class SiteSettingsService implements ISiteSettingsService {
+        constructor(private $http: ng.IHttpService,
+            private apiEndpoint: app.blocks.IApiEndPointConfig) {
+        }
+
+        getSettings(): ng.IPromise<ISiteSettings> {
+            return this.$http.get(this.apiEndpoint.baseUrl + '/site')
+                .then((response: ng.IHttpPromiseCallbackArg<ISiteSettings>): ISiteSettings => {
+                    return <ISiteSettings>response.data;
+                });
+        }
+
+        updateSettings(siteSettings: ISiteSettings): void {
+        }
+
+        getThemes(): ng.IPromise<string[]> {
+            return this.$http.get(this.apiEndpoint.baseUrl + '/themes')
+                .then((response: ng.IHttpPromiseCallbackArg<string[]>): string[] => {
+                    return <string[]>response.data;
+                });
+        }
     }
 
-    //Injection
-    factory.$inject = ['$http','app.blocks.ApiEndPoint'];
-    //As factory returns newed up instance
-    function factory($http: ng.IHttpService, apiEndPoint: IApiEndPointConfig):ISiteSettingsService {
-        return new SiteSettingsService($http,apiEndPoint);
+    factory.$inject = [
+        '$http',
+        'app.blocks.ApiEndpoint'
+    ];
+    function factory($http: ng.IHttpService,
+        apiEndpoint: app.blocks.IApiEndPointConfig): ISiteSettingsService {
+        return new SiteSettingsService($http, apiEndpoint);
     }
 
-    //angular registration
     angular
         .module('app.services')
-        .factory('app.services.SiteSettingsService', factory);
-}
+        .factory('app.services.SiteSettingsService',
+            factory);
+} 

@@ -1,24 +1,29 @@
-﻿interface IAppCokies {
-    userId:string;
+﻿interface IAppCookies {
+    userId: string;
 }
+
 ((): void => {
     'use strict';
+
     angular
         .module('app')
         .run(run);
 
-    run.$inject = ['$rootScope','$cookies','currentUser'];
-    function run($rootScope: ng.IRootScopeService,
-        $cookies: IAppCokies,
-    currentUser:ICurrentUser): void {
-        $rootScope.$on('$routeChangeError',
-            (): void => {
+    run.$inject = [
+        '$rootScope',
+        '$cookies',
+        'currentUser',
+        'app.services.PendingPostNotifyService'
+    ];
+    function run(
+        $rootScope: ng.IRootScopeService,
+        $cookies: IAppCookies,
+        currentUser: ICurrentUser,
+        pendingPostNotifyService: app.services.IPendingPostNotifyService): void {
 
-            });
-
-        //Now, get rid off local instance, rather get userid from ICurrentUser
-        /*var userId = $cookies.userId;*/
-        //Reading the logged in user cookie value and storing it locally.
+        $rootScope.$on('$routeChangeError', (): void => {
+        });
         currentUser.userId = $cookies.userId;
+        pendingPostNotifyService.run();
     }
 })();

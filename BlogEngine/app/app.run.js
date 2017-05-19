@@ -3,14 +3,17 @@
     angular
         .module('app')
         .run(run);
-    run.$inject = ['$rootScope', '$cookies', 'currentUser'];
-    function run($rootScope, $cookies, currentUser) {
+    run.$inject = [
+        '$rootScope',
+        '$cookies',
+        'currentUser',
+        'app.services.PendingPostNotifyService'
+    ];
+    function run($rootScope, $cookies, currentUser, pendingPostNotifyService) {
         $rootScope.$on('$routeChangeError', function () {
         });
-        //Now, get rid off local instance, rather get userid from ICurrentUser
-        /*var userId = $cookies.userId;*/
-        //Reading the logged in user cookie value and storing it locally.
         currentUser.userId = $cookies.userId;
+        pendingPostNotifyService.run();
     }
 })();
 //# sourceMappingURL=app.run.js.map

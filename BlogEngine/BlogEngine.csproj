@@ -80,15 +80,43 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Common, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.Common.3.2.0.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.MVC5.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.WebApi, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.WebApi.3.2.4.0\lib\net45-full\Ninject.Web.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -132,6 +160,10 @@
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
@@ -196,8 +228,15 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Api\Controllers\BlogPostsController.cs" />
+    <Compile Include="Areas\Api\Controllers\RolesController.cs" />
+    <Compile Include="Areas\Api\Controllers\SiteController.cs" />
+    <Compile Include="Areas\Api\Controllers\ThemesController.cs" />
+    <Compile Include="Areas\Api\Controllers\UsersController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -230,16 +269,35 @@
     <Content Include="app\app.values.js" />
     <Content Include="app\blocks\apiendpoint.config.js" />
     <Content Include="app\blocks\apiendpoint.provider.js" />
+    <Content Include="app\blocks\errorbroker.service.js" />
     <Content Include="app\blocks\logdecorator.config.js" />
+    <Content Include="app\blogposts\blogpost.controller.js" />
+    <Content Include="app\blogposts\blogpost.html" />
     <Content Include="app\blogposts\blogposts.routes.js" />
+    <Content Include="app\dashboard\dashboard.controller.js" />
+    <Content Include="app\dashboard\dashboard.html" />
+    <Content Include="app\dashboard\dashboard.routes.js" />
+    <Content Include="app\layout\layout.html" />
     <Content Include="app\layout\layout.module.js" />
     <Content Include="app\layout\navigation.controller.js" />
     <Content Include="app\services\blogpost.service.js" />
+    <Content Include="app\services\errorLoggers\consoleerrorlogger.service.js" />
+    <Content Include="app\services\errorLoggers\servererrorlogger.service.js" />
+    <Content Include="app\services\pendingpostnotify.service.js" />
     <Content Include="app\services\services.module.js" />
     <Content Include="app\services\sitesettings.service.js" />
     <Content Include="app\services\user.service.js" />
     <Content Include="app\sitesettings\sitesettings.controller.js" />
+    <Content Include="app\sitesettings\sitesettings.html" />
     <Content Include="app\sitesettings\sitesettings.module.js" />
+    <Content Include="app\sitesettings\sitesettings.routes.js" />
+    <Content Include="app\usersettings\usersettings.controller.js" />
+    <Content Include="app\usersettings\usersettings.html" />
+    <Content Include="app\usersettings\usersettings.module.js" />
+    <Content Include="app\usersettings\usersettings.routes.js" />
+    <Content Include="app\users\users.controller.js" />
+    <Content Include="app\users\users.html" />
+    <Content Include="app\users\users.routes.js" />
     <Content Include="app\widgets\slugcheck.directive.js" />
     <Content Include="app\widgets\widgets.module.js" />
     <Content Include="Content\bootstrap.css" />
@@ -285,6 +343,19 @@
     <Content Include="app\services\blogpost.service.js.map" />
     <Content Include="app\widgets\slugcheck.directive.js.map" />
     <Content Include="app\widgets\widgets.module.js.map" />
+    <Content Include="app\sitesettings\sitesettings.routes.js.map" />
+    <Content Include="app\blocks\errorbroker.service.js.map" />
+    <Content Include="app\services\errorLoggers\consoleerrorlogger.service.js.map" />
+    <Content Include="app\services\errorLoggers\servererrorlogger.service.js.map" />
+    <Content Include="app\services\pendingpostnotify.service.js.map" />
+    <Content Include="app\usersettings\usersettings.controller.js.map" />
+    <Content Include="app\usersettings\usersettings.module.js.map" />
+    <Content Include="app\usersettings\usersettings.routes.js.map" />
+    <Content Include="app\users\users.controller.js.map" />
+    <Content Include="app\users\users.routes.js.map" />
+    <Content Include="app\dashboard\dashboard.controller.js.map" />
+    <Content Include="app\dashboard\dashboard.routes.js.map" />
+    <Content Include="app\blogposts\blogpost.controller.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -337,9 +408,6 @@
     <Content Include="tslint.json" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\dashboard\" />
-    <Folder Include="app\usersettings\" />
-    <Folder Include="app\users\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
@@ -361,16 +429,29 @@
     <TypeScriptCompile Include="app\app.values.ts" />
     <TypeScriptCompile Include="app\blocks\apiendpoint.config.ts" />
     <TypeScriptCompile Include="app\blocks\apiendpoint.provider.ts" />
+    <TypeScriptCompile Include="app\blocks\errorbroker.service.ts" />
     <TypeScriptCompile Include="app\blocks\logdecorator.config.ts" />
+    <TypeScriptCompile Include="app\blogposts\blogpost.controller.ts" />
     <TypeScriptCompile Include="app\blogposts\blogposts.routes.ts" />
+    <TypeScriptCompile Include="app\dashboard\dashboard.controller.ts" />
+    <TypeScriptCompile Include="app\dashboard\dashboard.routes.ts" />
     <TypeScriptCompile Include="app\layout\layout.module.ts" />
     <TypeScriptCompile Include="app\layout\navigation.controller.ts" />
     <TypeScriptCompile Include="app\services\blogpost.service.ts" />
+    <TypeScriptCompile Include="app\services\errorLoggers\consoleerrorlogger.service.ts" />
+    <TypeScriptCompile Include="app\services\errorLoggers\servererrorlogger.service.ts" />
+    <TypeScriptCompile Include="app\services\pendingpostnotify.service.ts" />
     <TypeScriptCompile Include="app\services\services.module.ts" />
     <TypeScriptCompile Include="app\services\sitesettings.service.ts" />
     <TypeScriptCompile Include="app\services\user.service.ts" />
     <TypeScriptCompile Include="app\sitesettings\sitesettings.controller.ts" />
     <TypeScriptCompile Include="app\sitesettings\sitesettings.module.ts" />
+    <TypeScriptCompile Include="app\sitesettings\sitesettings.routes.ts" />
+    <TypeScriptCompile Include="app\usersettings\usersettings.controller.ts" />
+    <TypeScriptCompile Include="app\usersettings\usersettings.module.ts" />
+    <TypeScriptCompile Include="app\usersettings\usersettings.routes.ts" />
+    <TypeScriptCompile Include="app\users\users.controller.ts" />
+    <TypeScriptCompile Include="app\users\users.routes.ts" />
     <TypeScriptCompile Include="app\widgets\slugcheck.directive.ts" />
     <TypeScriptCompile Include="app\widgets\widgets.module.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />

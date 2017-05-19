@@ -4,12 +4,20 @@ var app;
     (function (sitesettings) {
         'use strict';
         var SiteSettingsController = (function () {
-            //Function should go after constructor
-            function SiteSettingsController() {
+            function SiteSettingsController(siteSettings, siteSettingsService) {
+                this.siteSettingsService = siteSettingsService;
+                this.themeNames = [];
+                this.siteSettings = siteSettings;
+                this.themeNames = siteSettings.availableThemeNames;
             }
-            SiteSettingsController.prototype.save = function () { throw new Error("Not implemented"); };
+            SiteSettingsController.prototype.save = function () {
+            };
             return SiteSettingsController;
         }());
+        SiteSettingsController.$inject = [
+            'siteSettings',
+            'app.services.SiteSettingsService'
+        ];
         angular
             .module('app.sitesettings')
             .controller('app.sitesettings.SiteSettingsController', SiteSettingsController);

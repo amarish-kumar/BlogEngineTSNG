@@ -2,28 +2,31 @@
     'use strict';
 
     interface ISiteSettingsScope {
-        title: string;
-        description: string;
+        siteSettings: app.services.ISiteSettings;
         themeNames: string[];
-        themeName: string;
-        //save:Function; // This will not tell signature, but a function type. or
-        //save:()=>void; //This is lamba implementation says doesn't return anything or
-        save():void;
+        save: () => void;
     }
 
-    class SiteSettingsController implements  ISiteSettingsScope {
-        title: string;
-        description: string;
-        themeNames: string[];
-        themeName: string;
+    class SiteSettingsController implements ISiteSettingsScope {
+        siteSettings: app.services.ISiteSettings;
+        themeNames: string[] = [];
 
-        //Function should go after constructor
-        constructor() {}
+        static $inject = [
+            'siteSettings',
+            'app.services.SiteSettingsService'
+        ];
+        constructor(siteSettings: app.services.ISiteSettings,
+            private siteSettingsService: app.services.ISiteSettingsService) {
+            this.siteSettings = siteSettings;
+            this.themeNames = siteSettings.availableThemeNames;
+        }
 
-        save(): void { throw new Error("Not implemented"); }
+        save(): void {
+        }
     }
 
     angular
         .module('app.sitesettings')
-        .controller('app.sitesettings.SiteSettingsController', SiteSettingsController);
+        .controller('app.sitesettings.SiteSettingsController',
+            SiteSettingsController);
 }
