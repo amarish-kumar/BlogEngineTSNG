@@ -228,14 +228,20 @@
     <Content Include="app\app.module.js" />
     <Content Include="app\app.run.js" />
     <Content Include="app\app.values.js" />
+    <Content Include="app\blocks\apiendpoint.config.js" />
+    <Content Include="app\blocks\apiendpoint.provider.js" />
     <Content Include="app\blocks\logdecorator.config.js" />
     <Content Include="app\blogposts\blogposts.routes.js" />
     <Content Include="app\layout\layout.module.js" />
     <Content Include="app\layout\navigation.controller.js" />
+    <Content Include="app\services\blogpost.service.js" />
     <Content Include="app\services\services.module.js" />
+    <Content Include="app\services\sitesettings.service.js" />
     <Content Include="app\services\user.service.js" />
     <Content Include="app\sitesettings\sitesettings.controller.js" />
     <Content Include="app\sitesettings\sitesettings.module.js" />
+    <Content Include="app\widgets\slugcheck.directive.js" />
+    <Content Include="app\widgets\widgets.module.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -273,6 +279,12 @@
     <Content Include="app\services\user.service.js.map" />
     <Content Include="app\sitesettings\sitesettings.controller.js.map" />
     <Content Include="app\sitesettings\sitesettings.module.js.map" />
+    <Content Include="app\services\sitesettings.service.js.map" />
+    <Content Include="app\blocks\apiendpoint.config.js.map" />
+    <Content Include="app\blocks\apiendpoint.provider.js.map" />
+    <Content Include="app\services\blogpost.service.js.map" />
+    <Content Include="app\widgets\slugcheck.directive.js.map" />
+    <Content Include="app\widgets\widgets.module.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -328,7 +340,6 @@
     <Folder Include="app\dashboard\" />
     <Folder Include="app\usersettings\" />
     <Folder Include="app\users\" />
-    <Folder Include="app\widgets\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
@@ -348,14 +359,20 @@
     <TypeScriptCompile Include="app\app.module.ts" />
     <TypeScriptCompile Include="app\app.run.ts" />
     <TypeScriptCompile Include="app\app.values.ts" />
+    <TypeScriptCompile Include="app\blocks\apiendpoint.config.ts" />
+    <TypeScriptCompile Include="app\blocks\apiendpoint.provider.ts" />
     <TypeScriptCompile Include="app\blocks\logdecorator.config.ts" />
     <TypeScriptCompile Include="app\blogposts\blogposts.routes.ts" />
     <TypeScriptCompile Include="app\layout\layout.module.ts" />
     <TypeScriptCompile Include="app\layout\navigation.controller.ts" />
+    <TypeScriptCompile Include="app\services\blogpost.service.ts" />
     <TypeScriptCompile Include="app\services\services.module.ts" />
+    <TypeScriptCompile Include="app\services\sitesettings.service.ts" />
     <TypeScriptCompile Include="app\services\user.service.ts" />
     <TypeScriptCompile Include="app\sitesettings\sitesettings.controller.ts" />
     <TypeScriptCompile Include="app\sitesettings\sitesettings.module.ts" />
+    <TypeScriptCompile Include="app\widgets\slugcheck.directive.ts" />
+    <TypeScriptCompile Include="app\widgets\widgets.module.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-component-router.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />
